@@ -1,0 +1,60 @@
+//10.	Faça um algoritmo que informe se um número é primo ou não. Um número primo
+//é aquele que é divisível por um e ele mesmo. Por exemplo, 17 é um número primo.
+package listaexercicio3;
+
+import java.util.Scanner;
+
+public class Exercicio10 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner (System.in);
+        int num;
+        
+        System.out.println("Entre com o número: ");
+        num = ler.nextInt();
+        
+        if (verificaPrimo3(num)){
+            System.out.println("É primo");
+        }
+        else {
+            System.out.println("Não é primo");
+        }
+}
+    // verifica pela raiz quadrada se o numero é primo
+    public static boolean verificaPrimo3(int num){
+        boolean ePrimo = true;
+        
+        for (int i = 2; i<= (long)Math.sqrt(num); i++){
+            if ((num % i) ==0){
+                ePrimo = false;
+            }
+        }
+        
+        return ePrimo;
+    }
+    // otimiza o código para numeros não primos, na primeira comparação
+    // se o numero for primo ele já para.
+    public static boolean verificaPrimo2(int num){
+        boolean eprimo = true;
+        
+        for (int i = 2; i<= num-1; i++){
+            if ((num % i) ==0){
+                eprimo = false;
+                break;
+            }
+        }
+        
+        return eprimo;
+    }
+    // pior versão para fazer primos, vai verificar todos os numeros mesmo
+    // que ja saiba que o numero é primo. vai testar todos os numeros.
+    public static boolean verificaPrimo1(int num){
+        boolean ePrimo = true;
+        
+        for (int i = 2; i<= num-1; i++){
+            if ((num % i) ==0){
+                ePrimo = false;
+            }
+        }
+      return ePrimo;
+    }
+}
