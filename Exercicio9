@@ -1,0 +1,27 @@
+//9.	Uma progressão aritmética é uma sequência numérica em que cada termo,
+//a partir do segundo, é igual a soma do termo anterior com uma constante. 
+//A constante é calculada como sendo a diferença entre o segundo e o primeiro número.
+//Faça um algoritmo que receba dois números inteiros e, a partir dessa informação, 
+//gere uma sequência em progressão aritmética.
+package listaexercicio3;
+
+import java.util.Scanner;
+
+public class Exercicio9 {
+    public static void main(String[] args) {
+        final int NUM_TERMOS = 10;
+        Scanner ler = new Scanner (System.in);
+        int t1,t2,t3, constante;
+        
+        System.out.print("Entre com o 1o termo: ");
+        t1 = ler.nextInt();
+        System.out.print("Entre com o 2o termo: ");
+        t2 = ler.nextInt();
+        constante = t2 - t1;
+        t3 = t2;
+        for (int i = 1; i < NUM_TERMOS; i++) {
+            t3 = t3 + constante;
+            System.out.println(t3 +" ");
+        }
+    }
+}
