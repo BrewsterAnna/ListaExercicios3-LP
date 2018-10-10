@@ -1,0 +1,37 @@
+//11.	Faça um algoritmo que leia uma sequência de números terminada em zero e mostre para cada número lido se ele é primo ou não. 
+package listaexercicio3;
+
+import java.util.Scanner;
+
+public class Exercicio11 {
+    public static void main(String[] args) {
+        final int FIM = 0;
+        Scanner ler = new Scanner (System.in);
+        int num;
+                
+        System.out.print("Entre com um numero: ");
+        num = ler.nextInt();
+        
+        while (num!= FIM){
+            if (verficaPrimo(num)){
+                System.out.println(num+" é primo");
+            }
+            else {
+                System.out.println(num+" não é primo");
+            }
+            System.out.println("Entre com um número: ");
+            num = ler.nextInt();
+        }
+    }
+    private static boolean verficaPrimo(int num) {
+         boolean ePrimo = true;
+        
+        for (int i = 2; i<= (long)Math.sqrt(num); i++){
+            if ((num % i) ==0){
+                ePrimo = false;
+                break;
+            }
+        }
+        return ePrimo;
+    }
+}
