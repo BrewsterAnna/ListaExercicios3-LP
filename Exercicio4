@@ -1,0 +1,42 @@
+//4.	Faça um algoritmo que leia uma sequência de n números inteiros e mostre a soma,
+//média, o maior número e o menor número da sequência.
+package listaexercicio3;
+
+import java.util.Scanner;
+
+public class Exercicio4 {
+     public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);   
+        int numero;
+        int soma =0;
+        float media;
+        int maior = Integer.MIN_VALUE;
+        int menor = Integer.MAX_VALUE;
+        int limite;
+        
+         System.out.print("Entre com o número de repetições: ");
+         limite  = ler.nextInt();
+        
+        for (int i = 1; i <=limite; i++){
+            System.out.print("Entre com o número: ");
+            numero = ler.nextInt();
+            if (numero >maior){
+                maior = numero;
+            }
+            if (numero<menor){
+                menor = numero;
+            }
+            soma = soma+numero;
+        }
+        if (limite>0){
+        media = (float)soma / limite;
+        System.out.println("Soma: "+soma);
+        System.out.println("Maior: "+ maior);
+        System.out.println("Menor: "+menor);
+        System.out.println("Media: "+media);
+        }
+        else{
+            System.out.println("Não há numeros a serem processados");
+        }
+    }    
+}
