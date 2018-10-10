@@ -1,0 +1,19 @@
+//12.Faça um programa que leia um mês do ano de forma que o usuário não possa entrar com um mês inválido.
+
+package listaexercicio3;
+
+import java.util.Scanner;
+
+public class Exercicio12 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner (System.in);
+        int mes;
+        do {
+            System.out.print("Entre com um mês: ");
+            mes = ler.nextInt();
+            if ((mes <1)|| (mes >12)){
+              System.out.println("Erro: mês inválido!");
+            }
+        } while((mes<1)|| (mes >12));
+    }
+}
