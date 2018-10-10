@@ -1,0 +1,41 @@
+//5.	Faça um algoritmo que leia uma sequência de números inteiros terminado por zero e mostre a soma,
+//média, o maior número e o menor número da sequência.
+package listaexercicio3;
+
+import java.util.Scanner;
+
+public class Exercicio5 {
+        public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);   
+        final int FIM = 0;
+        int num=0;
+        int cont = 0;
+        int soma =0;
+        float media;
+        int maior = Integer.MIN_VALUE;
+        int menor = Integer.MAX_VALUE;
+        
+        System.out.println("Entre com o número: ");
+            num = ler.nextInt();
+            soma = soma+num;
+        while (num!= FIM){
+            
+            if (num >maior){
+                maior = num;
+            }
+            if (num <menor){
+                menor = num;
+            }
+            cont++;
+        }
+        if (cont>0) {
+        media = (float) soma / cont;
+        System.out.println("Soma: "+soma);
+        System.out.println("Maior: "+ maior);
+        System.out.println("Menor: "+menor);
+        System.out.println("Media: "+media);
+        }
+    }    
+}
+
+
