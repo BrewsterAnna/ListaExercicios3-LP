@@ -1,0 +1,37 @@
+//6.	Faça um algoritmo que leia um intervalo inferior e superior, e mostre os números primos existentes
+//no intervalo. Por exemplo, o algoritmo recebe 5 e 10, e mostra como saída 5 e 7. Além disso, 
+//o algoritmo deve mostrar a quantidade de números primos encontrados no intervalo.
+package listaexercicio3;
+
+import java.util.Scanner;
+
+public class Exercicio6 {
+    public static void main(String[] args) {
+        int limiteInf;
+        int limiteSup;
+        
+        Scanner ler = new Scanner(System.in);
+        
+        System.out.println("Entre com o numero inferior: ");
+        limiteInf = ler.nextInt();
+        System.out.println("Entre com o numero superior: ");
+        limiteSup = ler.nextInt();
+        
+        for (int i  = limiteInf; i <= limiteSup; i++){
+            if (verificaPrimo3(i)){// o (i) serve para ir verificando cada numero entre a sequencia
+                System.out.println(i+ "É primo");
+            }
+        }
+    }
+    public static boolean verificaPrimo3(int num){
+        boolean ePrimo = true;
+        
+        for (int i = 2; i<= (long)Math.sqrt(num); i++){
+            if ((num % i) ==0){
+                ePrimo = false;
+                break;
+            }
+        }
+        return ePrimo;
+    }
+}
